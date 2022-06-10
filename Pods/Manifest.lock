@@ -1,0 +1,16 @@
+PODS:
+  - GeoFire/Utils (4.3.0)
+
+DEPENDENCIES:
+  - GeoFire/Utils
+
+SPEC REPOS:
+  trunk:
+    - GeoFire
+
+SPEC CHECKSUMS:
+  GeoFire: c34927b5c81ab614f611c79aa8d074cfa9780f07
+
+PODFILE CHECKSUM: dc3c33fbec9a583b06424d7237098945c9963dc8
+
+COCOAPODS: 1.11.2
