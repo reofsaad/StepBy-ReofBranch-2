@@ -23,6 +23,7 @@ struct MenuView: View {
    
     var columnGrid : [GridItem] = [GridItem(.flexible(),spacing:1),GridItem(.flexible(),spacing: 1)]
     
+   
     var body: some View {
        
         ScrollView{
@@ -32,17 +33,32 @@ struct MenuView: View {
                 HStack{
                     Spacer()
                     Spacer()
-                    Image("image 10")
-                    //Best Seller 
-//                    ForEach(categories.menuVar){ i in
-//
-//
-//                        if i.isBestSeller {
-//                    KFImage(URL(string:i.picture))
-//                    .resizable()
-//                            .scaledToFit()
-//                            .frame(width: 200, height: 200, alignment: .center)
-//                        }}
+                    
+//                    Best Seller
+                    ForEach(menuModel.menuVar){ i in
+
+
+                        if i.isBestSeller {
+                    KFImage(URL(string:i.picture))
+                    
+                    .resizable()
+                            .scaledToFit()
+                            .frame(width: 350, height: 160, alignment: .center)
+                            .overlay(
+                             
+                                Rectangle()
+                                    .background(LinearGradient(gradient: Gradient(colors: [.white, .black]), startPoint: .top, endPoint: .bottom))
+                                    .cornerRadius(23)
+                                    .font(.system(size: 200))
+                                    .opacity(0.1)
+                                    .frame(width: 350, height: 160)
+                                   
+                                
+                                )
+                        }
+                        
+                        
+                    }
                     Spacer()
                     Spacer()
                 }
@@ -50,26 +66,32 @@ struct MenuView: View {
                  
                     Spacer()
                     Spacer()
+                    Spacer()
+                    Spacer()
                     Text("Our Best Seller!")
                         .foregroundColor(.white)
-                        .frame(width: 320, height: 70, alignment: .topLeading)
+                        .fontWeight(.bold)
+                        .frame(width: 330, height: 70, alignment: .topLeading)
                     Spacer()
                     Spacer()
+                    
                     HStack{
                         Spacer()
                        
                     Text("French Fries!")
                         .foregroundColor(.white)
+                        .fontWeight(.bold)
+                        .frame(width: 190, height: 70, alignment: .leading)
                         Spacer()
                         Spacer()
                         Spacer()
                         Text("6 SAR") .foregroundColor(.white)
+                        .fontWeight(.bold)
                         Spacer()
                        
                     }
                     Spacer()
                     Spacer()
-                  
                  
                 }
                 
@@ -81,6 +103,17 @@ struct MenuView: View {
                 ForEach(menuModel.menuVar){i in
                     ZStack{
                     KFImage(URL(string:i.picture))
+                            
+                                Rectangle()
+                                    
+                                    .overlay ( getGradientOverlay()
+                                            ).cornerRadius(12)
+                                    
+                                    .cornerRadius(23)
+                                    .opacity(0.05)
+                                    .frame(width: 170, height: 160, alignment: .center)
+                                
+                                
                         VStack{
                             Spacer()
                 ZStack{
@@ -97,12 +130,17 @@ struct MenuView: View {
                             Spacer()
                             Spacer()
                            
+                            VStack{
+                             
                             Text(i.name)
                                 .font(.callout)
                                 .fontWeight(.bold)
-                                .foregroundColor(.black)
-                                .padding(.trailing,85)
-                                .padding(.bottom,5)
+                                .foregroundColor(.white)
+                                .frame(width: 140, height: 30, alignment: .topLeading)
+                               
+                            
+                            }
+                              
                               
                            
                         
@@ -116,12 +154,12 @@ struct MenuView: View {
                 Spacer()
                 
                 
-//                Section(header: Text("Sandwiches").font(.title).bold().padding(.trailing, 210)){}
-//
-//                Spacer()
-//                Section(header: Text("Dessert").font(.title).bold().padding(.trailing, 230)){}
-//                Spacer()
-//                Section(header: Text("Beverages").font(.title).bold().padding(.trailing, 230)){}
+                Section(header: Text("Sandwiches").font(.title).bold().padding(.trailing, 210)){}
+
+                Spacer()
+                Section(header: Text("Dessert").font(.title).bold().padding(.trailing, 230)){}
+                Spacer()
+                Section(header: Text("Beverages").font(.title).bold().padding(.trailing, 230)){}
             }
             
             Link(destination: URL(string: "https://www.mcdonalds.com/sa/en-sa/riyadh/full-menu.html")!, label: {
@@ -147,7 +185,16 @@ struct MenuView: View {
     }
 
 
-
+@ViewBuilder private func getGradientOverlay() -> some View {
+    LinearGradient(gradient:
+                    Gradient(stops: [
+                        .init(color: Color.white.opacity(0.1), location: 0),
+                        .init(color: Color.black.opacity(0.5), location: 1.0)
+                    ]),
+                   startPoint: .top,
+                   endPoint: .bottom
+    )
+}
 
 
 
@@ -161,6 +208,13 @@ struct MenuItems : Identifiable{
     var price : Int
     var picture : String
     var isBestSeller : Bool
+}
+
+
+struct MenuView_Previews: PreviewProvider {
+    static var previews: some View {
+        MenuView()
+    }
 }
 
 

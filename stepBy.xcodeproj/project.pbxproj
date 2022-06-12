@@ -30,6 +30,7 @@
 		3EEC14D9284D0BB50028D502 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEC14D8284D0BB50028D502 /* View.swift */; };
 		3EEC14DC284D5A1E0028D502 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEC14DB284D5A1E0028D502 /* BlurView.swift */; };
 		C6819FBAE1C654763396DCBE /* Pods_stepBy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85E54A4993FD3539521DFA2A /* Pods_stepBy.framework */; };
+		E45A13EB28552D4C00D837F2 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45A13EA28552D4C00D837F2 /* ImagePicker.swift */; };
 		E4B455E12852C876006EBA7D /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B455E02852C876006EBA7D /* Photos.swift */; };
 		E4B455E32853839F006EBA7D /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B455E22853839F006EBA7D /* MenuViewModel.swift */; };
 		E4EE81F728521E170099CDCC /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EE81F628521E170099CDCC /* MenuView.swift */; };
@@ -58,6 +59,7 @@
 		630F7B2E2387393FD4D1009F /* Pods-stepBy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stepBy.release.xcconfig"; path = "Target Support Files/Pods-stepBy/Pods-stepBy.release.xcconfig"; sourceTree = "<group>"; };
 		85E54A4993FD3539521DFA2A /* Pods_stepBy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stepBy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFBCFA70632EE5C31C08E617 /* Pods-stepBy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stepBy.debug.xcconfig"; path = "Target Support Files/Pods-stepBy/Pods-stepBy.debug.xcconfig"; sourceTree = "<group>"; };
+		E45A13EA28552D4C00D837F2 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		E4B455E02852C876006EBA7D /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		E4B455E22853839F006EBA7D /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		E4EE81F628521E170099CDCC /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				E4EE81F628521E170099CDCC /* MenuView.swift */,
 				E4B455E22853839F006EBA7D /* MenuViewModel.swift */,
 				E4B455E02852C876006EBA7D /* Photos.swift */,
+				E45A13EA28552D4C00D837F2 /* ImagePicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 			files = (
 				3EEC14D7284D0B6D0028D502 /* HideNavigationBarModifier.swift in Sources */,
 				3E454C95284CF19B009DF819 /* ContentView.swift in Sources */,
+				E45A13EB28552D4C00D837F2 /* ImagePicker.swift in Sources */,
 				3E454CA9284CF6A1009DF819 /* DetailsView.swift in Sources */,
 				3E9A0F04284E41BF0013DC13 /* RoundedCornersShape.swift in Sources */,
 				3E8381D72850B7240006BCE2 /* user.swift in Sources */,

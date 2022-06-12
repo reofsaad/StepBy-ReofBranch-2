@@ -8,6 +8,7 @@
 import SwiftUI
 import FirebaseFirestore
 
+
 class MenuViewModel: ObservableObject {
     @Published var menuVar : [MenuItems] = []
 
