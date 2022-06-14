@@ -43,18 +43,16 @@ struct MenuView: View {
                     
                     .resizable()
                             .scaledToFit()
-                            .frame(width: 350, height: 160, alignment: .center)
+                            .frame(width: 360, height: 160, alignment: .center)
                             .overlay(
-                             
-                                Rectangle()
-                                    .background(LinearGradient(gradient: Gradient(colors: [.white, .black]), startPoint: .top, endPoint: .bottom))
-                                    .cornerRadius(23)
-                                    .font(.system(size: 200))
-                                    .opacity(0.1)
-                                    .frame(width: 350, height: 160)
-                                   
-                                
+                              Rectangle()
+                                .fill(
+                                    LinearGradient(gradient: Gradient(colors: [.black,.clear,.clear, .black]), startPoint: .top, endPoint: .bottom)
                                 )
+                                .opacity(0.4)
+                            )
+                            .cornerRadius(20)
+                            .frame(width: 10, height: 190)
                         }
                         
                         
@@ -92,28 +90,38 @@ struct MenuView: View {
                     }
                     Spacer()
                     Spacer()
-                 
                 }
-                
-                   
+                 
             }
           
             LazyVGrid(columns: columnGrid){
+                
                 Section(header: Text("Breakfast").font(.title).bold().padding(.trailing, 230)){
                 ForEach(menuModel.menuVar){i in
                     ZStack{
+                        HStack{
+                            Spacer()
+                            Spacer()
+                            Spacer()
+                            Spacer()
                     KFImage(URL(string:i.picture))
+                                .resizable()
+                                .overlay(
+                                  Rectangle()
+                                    .fill(
+                                      LinearGradient(gradient: Gradient(colors: [.clear,.clear, .black]), startPoint: .top, endPoint: .bottom)
+                                    )
+                                    .opacity(0.4)
+                                )
+                                .cornerRadius(20)
+                                .frame(width: 170, height: 190)
+                            Spacer()
+                            Spacer()
+                            Spacer()
+                            Spacer()
                             
-                                Rectangle()
-                                    
-                                    .overlay ( getGradientOverlay()
-                                            ).cornerRadius(12)
-                                    
-                                    .cornerRadius(23)
-                                    .opacity(0.05)
-                                    .frame(width: 170, height: 160, alignment: .center)
-                                
-                                
+                        }
+                      
                         VStack{
                             Spacer()
                 ZStack{
@@ -121,10 +129,10 @@ struct MenuView: View {
                     RoundedRectangle(cornerRadius: 4)
                         .frame(width: 70, height: 25)
                         .foregroundColor(.orange)
-                        .padding(.leading,90)
+                        .padding(.leading,100)
                     Text("\(i.price) SAR")
                         .foregroundColor(.white)
-                        .padding(.leading,90)
+                        .padding(.leading,100)
                 }
                             Spacer()
                             Spacer()
@@ -162,39 +170,34 @@ struct MenuView: View {
                 Section(header: Text("Beverages").font(.title).bold().padding(.trailing, 230)){}
             }
             
-            Link(destination: URL(string: "https://www.mcdonalds.com/sa/en-sa/riyadh/full-menu.html")!, label: {
-                Text("View Menu ")
-                    .bold()
-                    .frame(width: 300, height: 50)
-                    .foregroundColor(.white)
-                    .background(Color.green)
-                    .cornerRadius(12)
-            })
+            
                 
         }
+           
           
-
+           
         
         }
+        Link(destination: URL(string: "https://www.mcdonalds.com/sa/en-sa/riyadh/full-menu.html")!, label: {
+            Text("View Menu ")
+                .bold()
+                .frame(width: 360, height: 53)
+                .foregroundColor(.white)
+                .background(Color("Green"))
+                .cornerRadius(12)
+        })
         
         
+        
+//        .background(Color("Gray"))
+//        .ignoresSafeArea()
     }
  
-
+       
   
-    }
-
-
-@ViewBuilder private func getGradientOverlay() -> some View {
-    LinearGradient(gradient:
-                    Gradient(stops: [
-                        .init(color: Color.white.opacity(0.1), location: 0),
-                        .init(color: Color.black.opacity(0.5), location: 1.0)
-                    ]),
-                   startPoint: .top,
-                   endPoint: .bottom
-    )
 }
+
+
 
 
 
@@ -214,6 +217,7 @@ struct MenuItems : Identifiable{
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
         MenuView()
+//            .preferredColorScheme(.dark)
     }
 }
 
